@@ -1,5 +1,6 @@
 import { shopifyGetCollection } from '@/lib/shopify'
 import FilterList from './filter';
+import { Suspense } from 'react';
 
 async function CollectionsMenu() {
   const collections = await shopifyGetCollection();
@@ -8,5 +9,12 @@ async function CollectionsMenu() {
 }
 
 export default function CollectionsList() {
-  return <CollectionsMenu />
+
+  return (
+    <Suspense fallback={
+      <div>Loading....</div>
+    }>
+      <CollectionsMenu />
+    </Suspense>
+  )
 }

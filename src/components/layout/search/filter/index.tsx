@@ -35,7 +35,7 @@ export default function FilterList({
     <>
       <nav>
         {title ? (
-          <h3>{title}</h3>
+          <h3 className='text-sm font-semibold'>{title}</h3>
         ) : null}
         <ul className='hidden md:block'>
           <FilterItemList list={list} />

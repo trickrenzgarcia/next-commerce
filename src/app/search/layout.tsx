@@ -1,5 +1,6 @@
 import CollectionsList from '@/components/layout/search/collections-list'
-import FilterList from '@/components/layout/search/filter-list'
+import FilterList from '@/components/layout/search/filter'
+import { sorting } from '@/lib/constants'
 import React from 'react'
 
 export default function SearchLayout({
@@ -15,7 +16,7 @@ export default function SearchLayout({
           {children}
         </div>
         <div>
-          <FilterList />
+          <FilterList list={sorting} title={"Sort by"} />
         </div>
       </div>
     </>
